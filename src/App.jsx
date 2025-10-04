@@ -19,7 +19,7 @@ export const App = () => {
   const [selectedGood, setSelectedGood] = useState('Jam');
 
   const handleClearSelection = () => setSelectedGood('');
-  const handleSelectGood = (good) => setSelectedGood(good);
+  const handleSelectGood = good => setSelectedGood(good);
   const handleRemoveSelection = () => setSelectedGood('');
 
   return (
@@ -47,7 +47,7 @@ export const App = () => {
               }
             >
               <td>
-                {!selectedGood && (
+                {selectedGood !== good && (
                   <button
                     data-cy="AddButton"
                     type="button"
